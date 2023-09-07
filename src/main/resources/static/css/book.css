@@ -1,0 +1,27 @@
+@charset "UTF-8";
+
+.container {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	margin: auto;
+}
+
+.banner {
+	display: flex;
+	flex-direction: row;
+	align-items: flex-end;
+	justify-content: space-between;
+}
+.actions {
+	display: flex;
+	flex-direction: row;
+	width: 100px;
+	justify-content: space-between;
+}
+button {
+	background-color: white;
+	color: black;
+	box-shadow: 3px 3px black;
+}
