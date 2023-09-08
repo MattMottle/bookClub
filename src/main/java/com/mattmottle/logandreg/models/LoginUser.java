@@ -33,6 +33,4 @@ public class LoginUser {
 	public void setLoginPassword(String loginPassword) {
 		this.loginPassword = loginPassword;
 	}
-
-
 }

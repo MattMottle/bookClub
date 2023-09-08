@@ -52,6 +52,9 @@ public class BookController {
 	}
 	@GetMapping("/books/new")
 	public String newBook(@ModelAttribute("book") Book book, Model model, HttpSession session) {
+		if(session.getAttribute("userId") == null) {
+			return "redirect:/";
+		}
 		User user = userService.findById((Long)session.getAttribute("userId"));
 		model.addAttribute("user", user);
 		return "newBook.jsp";
