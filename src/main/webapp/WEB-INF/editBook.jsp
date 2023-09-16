@@ -12,7 +12,7 @@
 </head>
 <body>
 	<div class="container">
-	<h1>Edit Book</h1>
+	<h1>Edit <c:out value="${originalBookTitle}"/></h1>
 		<div class="form">
 				<form:form action="/books/${book.id}/edit/process" method="post" modelAttribute="book">
 				 <input type="hidden" name="_method" value="put">

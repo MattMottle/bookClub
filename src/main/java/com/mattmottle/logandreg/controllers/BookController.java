@@ -77,13 +77,14 @@ public class BookController {
 		viewModel.addAttribute("loggedUser", userService.findById(userId));
 		Book book = bookService.findById(bookId);
 		model.addAttribute("book", book);
-		
+		model.addAttribute("originalBookTitle", book.getTitle());
 		return "editBook.jsp";
 	}
 	@RequestMapping(value="/books/{bookId}/edit/process", method=RequestMethod.PUT)
-	public String updateBook(@Valid @ModelAttribute("book") Book book, BindingResult result, Model model) {
+	public String updateBook(@Valid @ModelAttribute("book") Book book, BindingResult result, Model model, @PathVariable Long bookId) {
 		if(result.hasErrors()) {
 			model.addAttribute("book", book);
+			model.addAttribute("originalBookTitle", bookService.findById(bookId).getTitle());
 			return "editBook.jsp";
 		} else {
 			bookService.updateBook(book);
